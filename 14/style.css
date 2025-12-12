@@ -1,0 +1,171 @@
+:root {
+    --primary-color: #ff6b6b;
+    --secondary-color: #feca57;
+    --text-color: #2f3542;
+    --bg-color: #f1f2f6;
+    --card-bg: #ffffff;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+h1,
+h2 {
+    font-family: 'Comfortaa', cursive;
+    margin-bottom: 15px;
+}
+
+.hero {
+    background: url('https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?w=1200&auto=format&fit=crop&q=80') center/cover no-repeat;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(3px);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.content-wrapper {
+    max-width: 1000px;
+    margin: -50px auto 40px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+blockquote {
+    border-left: 5px solid var(--primary-color);
+    background: #fff0f0;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 0 10px 10px 0;
+    font-style: italic;
+    font-size: 1.1em;
+}
+
+cite {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #57606f;
+    font-weight: bold;
+}
+
+abbr {
+    text-decoration: none;
+    border-bottom: 2px dotted var(--primary-color);
+    color: var(--primary-color);
+    cursor: help;
+    font-weight: bold;
+}
+
+.reverse-text {
+    font-size: 1.5em;
+    color: var(--primary-color);
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+address {
+    font-style: normal;
+    background: #fffdf0;
+    padding: 20px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 10px;
+}
+
+address a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #2f3542;
+    color: #ced6e0;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .content-wrapper {
+        margin-top: 20px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;500;700&display=swap');
+
+body {
+    background: radial-gradient(circle at top, #fff9c4 0, #ffeb3b 30%, #263238 100%);
+    font-family: "Montserrat Alternates", sans-serif;
+    padding: 20px;
+    margin: 0;
+    color: #111;
+}
+
+.electric-title {
+    font-size: 36px;
+    text-align: center;
+    color: #212121;
+    text-shadow: 0 0 14px rgba(255, 255, 0, 0.7);
+    margin-bottom: 10px;
+}
+
+.electric-subtitle {
+    text-align: center;
+    font-size: 18px;
+    color: #37474f;
+    margin-bottom: 25px;
+}
+
+.form-card {
+    background: rgba(250, 250, 250, 0.96);
+    border-radius: 14px;
+    padding: 18px 20px 20px;
+    margin: 0 auto 22px;
+    max-width: 900px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.form-card h2 {
+    margin-top: 0;
+    font-size: 22px;
+    color: #1a237e;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+label {
+    display: block;
+    font-size: 15px;
+    color: #263238;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+input[type="color"],
+textarea,
+select {
+    display: block;
+    margin-top: 4px;
+    border: 2px solid #ffc107;
+    border-radius: 8px;
+    padding: 6px 8px;
+    font-family: inherit;
+    font-size: 14px;
+    background-color: #fffde7;
+    box-sizing: border-box;
+}
+
+input[type="color"] {
+    padding: 0;
+    height: 36px;
+    width: 80px;
+    cursor: pointer;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 70px;
+}
+
+input[type="range"] {
+    width: 100%;
+}
+
+.inline-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+.inline-group>span {
+    font-weight: 600;
+    color: #37474f;
+}
+
+.inline-group label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+}
+
+.question-title {
+    margin: 10px 0 4px;
+    font-weight: 600;
+    color: #263238;
+}
+
+.electric-btn {
+    border: none;
+    border-radius: 999px;
+    padding: 9px 20px;
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.electric-btn.primary {
+    background: linear-gradient(135deg, #ffeb3b, #ffc107);
+    color: #212121;
+    font-weight: 600;
+}
+
+.electric-btn.primary:hover {
+    filter: brightness(1.08);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+}
+
+.electric-btn.secondary {
+    background: #eceff1;
+    color: #263238;
+}
+
+.electric-btn.secondary:hover {
+    background: #cfd8dc;
+}
+
+.electric-result {
+    margin-left: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1b5e20;
+}
+
+.quiz-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.ohm-input {
+    max-width: 150px;
+}
+
+.ohm-hint {
+    font-size: 14px;
+    color: #455a64;
+    margin-top: 8px;
+}
+
+/* Кнопка для режиму «всередині транзистора» */
+.inside-btn {
+    border: none;
+    border-radius: 999px;
+    padding: 10px 22px;
+    background: #263238;
+    color: #c8ff00;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+.inside-btn:hover {
+    background: #37474f;
+    color: #e6ff4f;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+}
+
+/* Режим "всередині транзистора" */
+body.transistor-active {
+    background:
+        radial-gradient(circle at 10% 20%, rgba(200, 255, 0, 0.18) 0, transparent 55%),
+        radial-gradient(circle at 80% 30%, rgba(0, 255, 200, 0.18) 0, transparent 55%),
+        radial-gradient(circle at 30% 80%, rgba(0, 255, 120, 0.18) 0, transparent 55%),
+        #101820;
+    color: #e8ffea;
+}
+
+body.transistor-active .electric-title,
+body.transistor-active .electric-subtitle,
+body.transistor-active h2,
+body.transistor-active h3,
+body.transistor-active p,
+body.transistor-active label,
+body.transistor-active span,
+body.transistor-active a {
+    color: #e8ffea;
+}
+
+body.transistor-active .form-card {
+    background: rgba(12, 22, 30, 0.96);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(156, 255, 87, 0.3);
+}
+
+body.transistor-active input[type="text"],
+body.transistor-active input[type="email"],
+body.transistor-active input[type="number"],
+body.transistor-active input[type="date"],
+body.transistor-active input[type="time"],
+body.transistor-active input[type="color"],
+body.transistor-active textarea,
+body.transistor-active select {
+    background-color: #17252f;
+    border-color: #9cff57;
+    color: #e8ffea;
+}
+
+body.transistor-active .electric-result {
+    color: #9cff57;
+}
+
+body.transistor-active .inside-btn,
+body.transistor-active .electric-btn.primary,
+body.transistor-active .electric-btn.secondary {
+    background-color: #1b5e20;
+    color: #e8ffea;
+    box-shadow: 0 0 20px rgba(156, 255, 87, 0.7);
+}
+
+@media (max-width: 700px) {
+    body {
+        padding: 14px;
+        font-size: 16px;
+    }
+
+    .electric-title {
+        font-size: 26px;
+    }
+
+    .form-card {
+        padding: 14px;
+    }
+}

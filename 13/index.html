@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Демонстраційне Завдання</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background-video-container">
+        <video autoplay muted loop id="bgVideo">
+            <source src="video/big_buck_bunny.mp4" type="video/mp4">
+            Ваш браузер не підтримує тег video.
+        </video>
+        <div class="content">
+            <h1>Демонстрація Вставки Медіа та Графіки</h1>
+            <p>Ця сторінка містить приклади роботи з HTML5-тегами.</p>
+        </div>
+    </div>
+
+    <main>
+
+        <section class="media-section">
+            <h2>Локальне Відео (тег &lt;video&gt;)</h2>
+            <p>Використовується файл big_buck_bunny.mp4.</p>
+            <video width="600" height="338" controls>
+                <source src="video/big_buck_bunny.mp4" type="video/mp4">
+                Ваш браузер не підтримує тег video.
+            </video>
+        </section>
+
+        <hr>
+
+        <section class="media-section">
+            <h2>Звук (тег &lt;audio&gt;)</h2>
+            <audio controls>
+                <source src="audio/sample.mp3" type="audio/mp3">
+                Ваш браузер не підтримує тег audio.
+            </audio>
+        </section>
+
+        <hr>
+
+        <section class="map-section">
+            <h2>Карта (тег &lt;iframe&gt;)</h2>
+            <p>Приклад вставки карти.</p>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2039.9329124446545!2d30.5234!3d50.4501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce2d4e8b5d3d%3A0x673c6838b05d4b5!2z0K7QtdCy0YHQtdC70Ywg0JzQstCw0LzQsNGG0ZbQstGB0LzQsCDQnNC-0L3RgdC-0LIsINC60YDQsNC00L4!5e0!3m2!1suk!2sua!4v1701540000000!5m2!1suk!2sua"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </section>
+
+        <hr>
+
+        <section class="image-map-section">
+            <h2>Карта Зображення (&lt;map&gt; та &lt;area&gt;)</h2>
+            <p>Натисніть на фігури на зображенні.</p>
+
+            <img src="img/map_example.png" alt="Приклад карти зображення" usemap="#shape_map" width="550" height="200">
+
+            <map name="shape_map">
+                <area shape="circle" coords="100,100,50" href="https://uk.wikipedia.org/wiki/HTML" alt="Коло"
+                    target="_blank">
+                <area shape="rect" coords="200,50,300,150" href="https://uk.wikipedia.org/wiki/CSS" alt="Квадрат"
+                    target="_blank">
+                <area shape="poly" coords="400,150,450,50,500,150" href="https://uk.wikipedia.org/wiki/JavaScript"
+                    alt="Трикутник" target="_blank">
+            </map>
+        </section>
+
+        <hr>
+
+        <section class="drawing-section">
+            <h2>Canvas JavaScript та SVG</h2>
+
+            <div class="svg-container">
+                <h3>Вставка SVG</h3>
+                <svg width="200" height="200" viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="20" y="20" width="160" height="160" fill="#dc3545" stroke="#c82333" stroke-width="3" />
+                    <text x="100" y="105" font-size="20" text-anchor="middle" fill="white">SVG</text>
+                </svg>
+            </div>
+
+            <div class="canvas-container">
+                <h3>Робота з Canvas</h3>
+                <canvas id="myCanvas" width="200" height="200" style="border:1px solid #000;"></canvas>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+
+        ctx.fillStyle = '#ffc107';
+        ctx.beginPath();
+        ctx.arc(100, 100, 80, 0, 2 * Math.PI);
+        ctx.fill();
+
+        ctx.fillStyle = '#343a40';
+        ctx.font = '20px Arial';
+        ctx.textAlign = 'center';
+        ctx.fillText('Canvas', 100, 105);
+    </script>
+
+</body>
+
+</html>

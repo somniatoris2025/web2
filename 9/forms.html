@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Який ти електрик</title>
+    <link rel="stylesheet" href="forms.css">
+</head>
+
+<body>
+
+    <h1 class="electric-title">Який ти електрик ⚡</h1>
+    <p class="electric-subtitle">
+        Заповни форми, дізнайся свій електричний рівень.
+    </p>
+
+    <section class="form-card">
+        <h2>1. Анкета електрика</h2>
+        <form>
+            <label>
+                Ім'я:
+                <input type="text" name="name" placeholder="Введіть ім'я">
+            </label>
+
+            <label>
+                Email:
+                <input type="email" name="email" placeholder="you@example.com">
+            </label>
+
+            <label>
+                Стаж роботи електриком (років):
+                <input type="number" name="experience" min="0" max="50" value="0">
+            </label>
+
+            <label>
+                Улюблений робочий діапазон напруги:
+                <select name="voltage">
+                    <option value="low">До 50 В (низьковольтні системи, слаботочка)</option>
+                    <option value="220">~220 В (побутова мережа)</option>
+                    <option value="380">380 В (промислові трифазні мережі)</option>
+                    <option value="high">Висока напруга (кабелі, підстанції)</option>
+                </select>
+            </label>
+
+            <label>
+                Коротко про твій досвід:
+                <textarea name="about" rows="3" placeholder="Напишіть кілька речень про себе"></textarea>
+            </label>
+
+            <div class="inline-group">
+                <span>Чи маєш профільну освіту?</span>
+                <label><input type="radio" name="education" value="yes"> Так</label>
+                <label><input type="radio" name="education" value="no"> Ні</label>
+            </div>
+
+            <div class="inline-group">
+                <span>Що ти найчастіше робиш?</span>
+                <label><input type="checkbox" name="tasks" value="sockets"> Монтаж розеток та вимикачів</label>
+                <label><input type="checkbox" name="tasks" value="shield"> Збирання щитків</label>
+                <label><input type="checkbox" name="tasks" value="schemes"> Розробка схем</label>
+                <label><input type="checkbox" name="tasks" value="automation"> Автоматизація та реле</label>
+            </div>
+
+            <button type="reset" class="electric-btn secondary">Очистити анкету</button>
+        </form>
+    </section>
+
+    <section class="form-card">
+        <h2>2. Тест «Який ти електрик»</h2>
+        <form id="quiz-form">
+            <p class="question-title">Коли ти бачиш купу старих проводів у щитку, ти:</p>
+            <label><input type="radio" name="q1" value="practic">Спокійно розбираєш, маркуєш і перекладаєш все
+                по-новому.</label>
+            <label><input type="radio" name="q1" value="home">Замінюєш тільки те, що «зовсім погано виглядає».</label>
+            <label><input type="radio" name="q1" value="theory">Закриваєш дверцята і йдеш читати ПУЕ.</label>
+
+            <p class="question-title">Як ти ставишся до вимірювань мультиметром?</p>
+            <label><input type="radio" name="q2" value="practic">Вимірюю все: напругу, опір, струм, перевіряю кожен
+                ланцюг.</label>
+            <label><input type="radio" name="q2" value="home">Перевірив, що «220 є» — цього достатньо.</label>
+            <label><input type="radio" name="q2" value="theory">Знаю, як рахувати по формулах, мультиметром майже не
+                користуюсь.</label>
+
+            <p class="question-title">Як ти прокладаєш нову проводку в кімнаті?</p>
+            <label><input type="radio" name="q3" value="practic">По плану, у трубах/гофрі, з запасом по перерізу і по
+                групах.</label>
+            <label><input type="radio" name="q3" value="home">Як вийде, головне — щоб все працювало.</label>
+            <label><input type="radio" name="q3" value="theory">Я б краще намалював ідеальну схему, ніж довбав
+                стіни.</label>
+
+            <div class="quiz-actions">
+                <button type="button" class="electric-btn primary" onclick="calculateElectricType()">
+                    Дізнатися, який я електрик
+                </button>
+                <span id="quiz-result" class="electric-result"></span>
+            </div>
+        </form>
+    </section>
+
+    <section class="form-card">
+        <h2>3. Міні‑калькулятор закону Ома</h2>
+        <form id="ohm-form">
+            <div class="inline-group">
+                <label>
+                    Напруга U (вольт):
+                    <input type="number" id="voltage" class="ohm-input" min="0" step="0.1" value="220">
+                </label>
+                <label>
+                    Опір R (Ом):
+                    <input type="number" id="resistance" class="ohm-input" min="0.1" step="0.1" value="110">
+                </label>
+            </div>
+
+            <div class="inline-group">
+                <button type="button" class="electric-btn primary" onclick="calcCurrent()">
+                    Обчислити струм I
+                </button>
+                <span id="ohm-result" class="electric-result"></span>
+            </div>
+
+            <p class="ohm-hint">
+                Нагадування: <strong>I = U / R</strong>. Введи напругу та опір, щоб дізнатися струм.
+            </p>
+        </form>
+    </section>
+
+    <section class="form-card">
+        <h2>4. Додаткові елементи форм</h2>
+        <form>
+            <label>
+                Дата наступного планового відключення:
+                <input type="date" name="cutoff">
+            </label>
+
+            <label>
+                Час, коли ти зазвичай виходиш на виїзд:
+                <input type="time" name="start-time">
+            </label>
+
+            <label>
+                Рівень втоми наприкінці робочого дня:
+                <input type="range" name="tired" min="0" max="10" value="5">
+            </label>
+
+            <label>
+                Улюблений колір ізоляції:
+                <input type="color" name="insulation-color" value="#ffcc00">
+            </label>
+
+            <button type="submit" class="electric-btn secondary">Надіслати прикладово</button>
+        </form>
+    </section>
+
+    <script>
+        function calculateElectricType() {
+            const form = document.getElementById('quiz-form');
+            const answers = ['q1', 'q2', 'q3'].map(name => {
+                const checked = form.querySelector('input[name="' + name + '"]:checked');
+                return checked ? checked.value : null;
+            });
+
+            if (answers.includes(null)) {
+                document.getElementById('quiz-result').textContent = 'Будь ласка, відповідай на всі запитання.';
+                return;
+            }
+
+            const score = { practic: 0, home: 0, theory: 0 };
+            answers.forEach(v => score[v]++);
+
+            let typeText = '';
+
+            if (score.practic >= 2) {
+                typeText = 'Ти Профі‑електрик: любиш порядок у щитку, вимірювання і правильні схеми.';
+            } else if (score.home >= 2) {
+                typeText = 'Ти Домашній майстер: все працює, але ПУЕ читаєш лише за потреби.';
+            } else {
+                typeText = 'Ти Теоретик: добре розбираєшся в формулах та схемах, але практики хочеться більше.';
+            }
+
+            document.getElementById('quiz-result').textContent = typeText;
+        }
+
+        function calcCurrent() {
+            const u = parseFloat(document.getElementById('voltage').value);
+            const r = parseFloat(document.getElementById('resistance').value);
+            const output = document.getElementById('ohm-result');
+
+            if (isNaN(u) || isNaN(r) || r <= 0) {
+                output.textContent = 'Введіть коректні значення U і R (R > 0).';
+                return;
+            }
+
+            const i = u / r;
+            output.textContent = 'Струм I ≈ ' + i.toFixed(2) + ' A';
+        }
+    </script>
+
+</body>
+
+</html>
