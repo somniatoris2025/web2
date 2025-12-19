@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Написати Тіні</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Зв'язок з Тіною 💌</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Головна</a>
+        <a href="gallery.html">Фотоальбом</a>
+        <a href="contact.html" class="active">Написати Тіні</a>
+    </nav>
+
+    <div class="container">
+        <section class="card">
+            <h2>Залиште повідомлення</h2>
+            <p>Хочеш пригостити мене смаколиком або просто сказати "Мяу"? Заповни форму!</p>
+
+            <form>
+                <label>
+                    Як тебе звати (Людина):
+                    <input type="text" name="name" placeholder="Введіть ваше ім'я">
+                </label>
+
+                <label>
+                    Твій Email:
+                    <input type="email" name="email" placeholder="you@example.com">
+                </label>
+
+                <label>
+                    Скільки смаколиків ти готовий мені дати?
+                    <input type="number" name="treats" min="1" max="100" value="5">
+                </label>
+
+                <label>
+                    Що ти хочеш передати?
+                    <select name="message_type">
+                        <option value="hello">Просто сказати "Привіт"</option>
+                        <option value="pet">Хочу погладити</option>
+                        <option value="play">Погратися лазером</option>
+                        <option value="food">Я приніс їжу!</option>
+                    </select>
+                </label>
+
+                <label>
+                    Твоє повідомлення:
+                    <textarea name="about" rows="4" placeholder="Напишіть щось приємне..."></textarea>
+                </label>
+
+                <div class="inline-group">
+                    <span>Чи маєш ти своїх котів?</span>
+                    <label><input type="radio" name="has_cat" value="yes"> Так, звісно</label>
+                    <label><input type="radio" name="has_cat" value="no"> Ні, але я їх люблю</label>
+                </div>
+
+                <div class="inline-group">
+                    <span>Що ти принесеш у подарунок?</span>
+                    <label><input type="checkbox" name="gift" value="fish"> Рибку</label>
+                    <label><input type="checkbox" name="gift" value="mouse"> Іграшкову мишку</label>
+                    <label><input type="checkbox" name="gift" value="box"> Картонну коробку</label>
+                </div>
+
+                <button type="submit" class="cat-btn">Надіслати Мяу-пошту</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2025 Сайт створено на основі лабораторних робіт</p>
+    </footer>
+
+</body>
+
+</html>

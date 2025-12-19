@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&family=Montserrat+Alternates:wght@400;600&display=swap');
+
+:root {
+    --primary-color: #ff6b6b;
+    --secondary-color: #54a0ff;
+    --bg-gradient: radial-gradient(circle at top, #fff9c4 0, #ffeb3b 30%, #ff9f43 100%);
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --text-color: #2f3542;
+    --input-bg: #fffde7;
+    --input-border: #ffc107;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Montserrat Alternates', sans-serif;
+    background: var(--bg-gradient);
+    background-attachment: fixed;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Comfortaa', cursive;
+    text-align: center;
+    color: #d35400;
+}
+
+nav {
+    text-align: center;
+    margin-bottom: 30px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+/* Стилі для Головної та Галереї */
+.profile-img {
+    display: block;
+    margin: 0 auto 20px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--secondary-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Стилі для Форм (взяті з 9/forms.css) */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--input-border);
+    border-radius: 10px;
+    background-color: var(--input-bg);
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.inline-group {
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px dashed var(--input-border);
+}
+
+.inline-group span {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #d35400;
+}
+
+.cat-btn {
+    border: none;
+    border-radius: 50px;
+    padding: 12px 25px;
+    font-family: inherit;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #ff6b6b, #ff9f43);
+    color: white;
+    font-weight: bold;
+    margin-top: 10px;
+    align-self: center;
+}
+
+.cat-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #555;
+}
